@@ -1,10 +1,8 @@
-development:
-  adapter: async
-
-test:
-  adapter: async
-
-production:
+redis: &redis
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: Rails51Test_production
+  #channel_prefix: Rails51Test_production
+
+production: *redis
+development: *redis
+test: *redis
